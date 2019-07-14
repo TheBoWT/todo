@@ -1,0 +1,24 @@
+.checked{
+  background-color: #ddd;
+}
+
+ul{
+  position: relative;
+
+
+}
+li{
+  margin-left: 1rem;
+}
+.itemchechbox{
+  display: inline-block;
+  position: absolute;
+  margin-right: 3rem;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+  padding: 1rem 0.5rem;
+}
+
+

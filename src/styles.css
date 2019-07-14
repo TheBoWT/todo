@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+li{
+  position: relative;
+}
+li:hover .action{
+  display: block;
+}
+
+.action{
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 10px;
+}
