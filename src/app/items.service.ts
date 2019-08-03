@@ -24,8 +24,13 @@ constructor(private dialog:MatDialog) { }
   AddItem(){
     let dialogRef = this.dialog.open(AddComponent, {data: {formAction: 'Add Item'}, width: '500px', height: '400px'});
     dialogRef.afterClosed().subscribe(data=>{
-      if(data != null){
-        let newItem = new Items(data.name, data.amount, data.note);
+
+      if(data != null && data.name.trim() != ''){
+        const name = data.name;
+        const amount = data.amount;
+        const note = data.note;
+
+        let newItem = new Items(name, amount, note);
         this.activeItems.push(newItem);
       }
     });
@@ -37,7 +42,7 @@ constructor(private dialog:MatDialog) { }
       if(data != null){
         item.name = data.name,
         item.amount = data.amount,
-        item.note = item.note
+        item.note = data.note;
       }
 
     });
