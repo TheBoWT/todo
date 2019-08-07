@@ -1,10 +1,11 @@
-<button class="btn btn-success mb2" (click)="onAdd()">Add Item</button><hr>
+<button class="btn btn-success mb2" (click)="onAdd()">Add Item</button>
+<hr>
 <div *ngIf="isOneChecked()">
     <input type="checkbox" [(ngModel)]="checkUncheckCondition" (change)="checkUncheckAll()"><i>Check/Uncheck All</i>
-    <button class="btn btn-danger ml-5" (click)="deleteChecked()">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
+    <button class="btn btn-danger d-block ml-auto" (click)="deleteChecked()"><i class="fa fa-trash" aria-hidden="true"></i></button>
 </div>
 <ul class="list-group" *ngFor="let item of items; let i = index">
-  <div class="itemchechbox">  <input type="checkbox" [(ngModel)]="item.isChecked" (change)="isAllchecked()"></div>
+  <span class="itemchechbox">  <input type="checkbox" [(ngModel)]="item.isChecked" (change)="isAllchecked()"></span>
   <li  class="list-group-item" [ngStyle]="{'backgroundColor': item.isChecked ? '#eee': ''}"
     (click)="onEdit(item)">
       {{ item.name }}

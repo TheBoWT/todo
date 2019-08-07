@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Items } from '../items.model';
 import { ItemsService } from '../items.service';
 
@@ -8,8 +8,8 @@ import { ItemsService } from '../items.service';
   styleUrls: ['./active.component.css']
 })
 export class ActiveComponent implements OnInit {
-  items:Items[] = [];
-  checkUncheckCondition: boolean = false;
+  items: Items[] = [];
+  checkUncheckCondition = false;
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit() {
@@ -45,17 +45,18 @@ getItems(){
    }
   }
 
-  onCheckedOff(i:number, item:Items){
+  onCheckedOff(i: number, item: Items){
     this.items.splice(i, 1);
     this.itemsService.completedItems.push(item);
   }
   onDelete(i:number){
     this.items.splice(i, 1);
   }
+
   onAdd(){
     this.itemsService.AddItem();
   }
-  onEdit(item:Items){
+  onEdit(item: Items){
     this.itemsService.UpdateItem(item);
   }
 }

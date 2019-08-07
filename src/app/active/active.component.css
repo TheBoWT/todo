@@ -8,12 +8,11 @@ ul{
 
 }
 li{
-  margin-left: 1rem;
+  margin-left: .8rem;
 }
 .itemchechbox{
   display: inline-block;
   position: absolute;
-  margin-right: 3rem;
   top: 0;
   left: 0;
   height: 100%;

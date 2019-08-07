@@ -22,7 +22,6 @@ export class AddComponent implements OnInit {
     this.formAction = this.data.formAction;
     if(this.data.formAction == 'Update Item')
       this.formData.patchValue(this.data.formData);
-
   }
 
   onClick(){
